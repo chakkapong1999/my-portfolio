@@ -8,7 +8,7 @@ import en from '@/app/locales/en/messages.json'
 import th from '@/app/locales/th/messages.json'
 
 const ColorModeContext = createContext({ toggleColorMode: () => {} });
-const LocaleContext = createContext({ switchLocale: () => {} });
+const LocaleContext = createContext({ switchLocale: () => {}, locale: 'en' });
 
 export const useColorMode = () => useContext(ColorModeContext);
 export const useLocale = () => useContext(LocaleContext)
@@ -70,8 +70,9 @@ export function Providers({ children }: Readonly<{ children: ReactNode }>) {
   const localeControls = useMemo(
   () => ({
     switchLocale: () => 
-      setLang(prev => prev === 'en' ? 'th' : 'en')
-  }), [])
+      setLang(prev => prev === 'en' ? 'th' : 'en'),
+    locale: lang
+  }), [lang])
 
   const getMessages = () => {
     return lang === 'en' ? en : th

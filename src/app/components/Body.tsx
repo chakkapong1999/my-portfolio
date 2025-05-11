@@ -35,20 +35,32 @@ const Detail = () => {
     return (
         <Box>
             <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repellat aspernatur et sunt consectetur amet. Eius consequatur saepe numquam nesciunt at, inventore a accusantium nam! Ex laudantium mollitia provident error illum praesentium quae corporis magni est asperiores animi voluptatem deleniti veniam ipsum aliquam excepturi reiciendis ipsa deserunt maiores, nam necessitatibus.</Typography>
+            <Box sx={{ mt: 5, display: 'flex', columnGap: 1 }}>
+                <IconButton onClick={() => handleOnclick('tel')} color="primary">
+                    <CallIcon />
+                </IconButton>
+                <IconButton onClick={() => handleOnclick('mail')} color="primary">
+                    <EmailIcon />
+                </IconButton>
+                <IconButton onClick={() => handleOnclick('git')} color="primary">
+                    <GitHubIcon />
+                </IconButton>
+            </Box>
         </Box>
     )
 }
 
-export default function Body() {
-    const handleOnclick = (type: 'tel' | 'mail' | 'git') => {
-        if (type === 'mail') {
-            window.location.assign('mailto:chakkappong@gmail.com');
-        } else if (type === 'git') {
-            window.open('https://github.com/chakkapong1999', '_blank')
-        } else {
-            window.location.assign('tel:0633435684')
-        }
+const handleOnclick = (type: 'tel' | 'mail' | 'git') => {
+    if (type === 'mail') {
+        window.location.assign('mailto:chakkappong@gmail.com');
+    } else if (type === 'git') {
+        window.open('https://github.com/chakkapong1999', '_blank')
+    } else {
+        window.location.assign('tel:0633435684')
     }
+}
+
+export default function Body() {
 
     return (
         <Box>
@@ -56,17 +68,6 @@ export default function Body() {
                 <Box>
                     <Instruction />
                     <Detail />
-                    <Box sx={{ mt: 5, display: 'flex', columnGap: 1 }}>
-                        <IconButton onClick={() => handleOnclick('tel')} color="primary">
-                            <CallIcon />
-                        </IconButton>
-                        <IconButton onClick={() => handleOnclick('mail')} color="primary">
-                            <EmailIcon />
-                        </IconButton>
-                        <IconButton onClick={() => handleOnclick('git')} color="primary">
-                            <GitHubIcon />
-                        </IconButton>
-                    </Box>
                 </Box>
                 <MyProfile />
             </Box>
