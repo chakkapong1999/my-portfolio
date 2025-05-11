@@ -2,7 +2,7 @@
 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import { useColorMode, useLocale } from '../providers';
+import { useColorMode } from '../providers';
 import { useTheme } from '@mui/material/styles';
 import { Avatar, Box, Button, IconButton, Typography } from '@mui/material';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
@@ -15,7 +15,7 @@ function Header() {
   const t = useTranslations();
   const { toggleColorMode } = useColorMode();
   const theme = useTheme();
-  const { switchLocale } = useLocale()
+  // const { switchLocale } = useLocale()
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
