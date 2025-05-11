@@ -36,7 +36,7 @@ pipeline {
                 withSonarQubeEnv("SonarQube") {
                     sh '''
                         npx sonar-scanner \
-                        -Dsonar.projectKey=devonly-gateway \
+                        -Dsonar.projectKey=my-portfolio \
                         -Dsonar.sources=src \
                         -Dsonar.host.url=$SONAR_HOST_URL \
                         -Dsonar.token=$SONAR_AUTH_TOKEN
