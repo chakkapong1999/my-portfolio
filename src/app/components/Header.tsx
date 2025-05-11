@@ -19,7 +19,7 @@ function Header() {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/files/dummy.pdf';
+    link.href = '/static/dummy.pdf';
     link.download = 'chakkaphong-resume.pdf';
     document.body.appendChild(link);
     link.click();
