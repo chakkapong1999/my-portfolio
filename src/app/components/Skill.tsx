@@ -1,37 +1,34 @@
+'use client';
 import { Box, Typography } from "@mui/material";
-import GitHubIcon from '@mui/icons-material/GitHub';
+import Icon from "./icons/Icon";
 
 const skillList = [
     {
-        icon: <GitHubIcon fontSize="large"/>,
+        icon: <Icon skill="git"/>,
         name: 'Git',
     },
     {
-        icon: <GitHubIcon fontSize="large"/>,
-        name: 'HTML/CSS',
-    },
-    {
-        icon: <GitHubIcon fontSize="large"/>,
+        icon: <Icon skill="javascript"/>,
         name: 'Javascript',
     },
     {
-        icon: <GitHubIcon fontSize="large"/>,
+        icon: <Icon skill="react"/>,
         name: 'React',
     },
     {
-        icon: <GitHubIcon fontSize="large"/>,
+        icon: <Icon skill="java"/>,
         name: 'Java',
     },
     {
-        icon: <GitHubIcon fontSize="large"/>,
+        icon: <Icon skill="springboot"/>,
         name: 'Springboot',
     },
     {
-        icon: <GitHubIcon fontSize="large"/>,
+        icon: <Icon skill="docker"/>,
         name: 'Docker',
     },
     {
-        icon: <GitHubIcon fontSize="large"/>,
+        icon: <Icon skill="jenkins"/>,
         name: 'Jenkins',
     }
 ]
@@ -59,7 +56,7 @@ export default function Skill() {
                                     flexDirection: 'column', 
                                     alignItems: 'center', 
                                     border: '1px solid', 
-                                    borderRadius: 2, 
+                                    borderRadius: 3, 
                                     padding: 2, 
                                     width: '9rem', 
                                     height: '9rem',
@@ -72,7 +69,7 @@ export default function Skill() {
                                 }}
                             >
                                 {skill.icon}
-                                <Typography variant="h6">{skill.name}</Typography>
+                                <Typography fontWeight={600}>{skill.name}</Typography>
                             </Box>
                         )
                     })}
