@@ -62,7 +62,7 @@ pipeline {
                         docker pull ${FULL_IMAGE}
                         docker stop ${IMAGE_NAME} || true
                         docker rm ${IMAGE_NAME} || true
-                        docker run -d --name ${IMAGE_NAME} -p 3000:3000 ${FULL_IMAGE}
+                        docker run -d --name ${IMAGE_NAME} -p 30001:30001 ${FULL_IMAGE}
                         docker image prune -f
                     """
                 }
